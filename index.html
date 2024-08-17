@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeeksterPok</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+
+<body class="font-sans">
+    <div class="container1 w-10/12 mx-auto p-6">
+        <header class="text-center mt-10">
+            <h1 class="text-4xl font-extrabold text-gray-800 mb-4">GeeksterPok</h1>
+            <p class="text-lg text-gray-600">Discover and explore Pokémon with ease.</p>
+        </header>
+        <div class="flex justify-between items-center mb-8">
+            <div>
+                <img src="/assets/img/pokemon-filter.gif" class="w-48" alt="pokemon-filter">
+                <div class="flex space-x-4">
+                    <select id="type"
+                        class="p-2 rounded-lg bg-white border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300">
+                        <option value="">Filter by Type</option>
+                        <!-- Types will be dynamically populated here -->
+                    </select>
+                    <button id="filter"
+                        class="p-2 rounded-lg bg-blue-500 text-white shadow-lg hover:bg-blue-600 transition-all duration-300">Filter</button>
+                    <button class="shadow-lg border rounded-lg">
+                        <a href="/index.html"><img src="/assets/img/reset.jpg" class="rounded-lg h-10 w-10"
+                                alt="reset"></a>
+                    </button>
+                </div>
+            </div>
+            <div>
+                <img src="/assets/img/pokemon-search.gif" class="w-24 h-24" alt="pokemon-search">
+                <input id="search" type="text" placeholder="Search Pokémon"
+                    class="p-2 rounded-lg border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300" />
+            </div>
+        </div>
+
+        <div id="pokemon_card_container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Pokémon cards will be dynamically inserted here -->
+        </div>
+        <!--when we are Searching and filtering if the searched pokemon not available then this img show -->
+        <div class="notFound flex items-center justify-center">
+            <img src="/assets/img/pikachu-pokemon-say-NO.gif" class="" alt="">
+        </div>
+    </div>
+
+    <script src="/assets/script.js"></script>
+</body>
+
+</html>

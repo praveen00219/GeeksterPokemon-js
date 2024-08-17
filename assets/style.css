@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.card-container {
+  width: 210px;
+  height: 300px;
+  perspective: 900px;
+}
+
+.card {
+  height: 100%;
+  width: 100%;
+  border-radius: 1rem;
+  position: relative;
+  transition: transform 1500ms;
+  transform-style: preserve-3d;
+}
+
+.card-container:hover > .card {
+  cursor: pointer;
+  transform: rotateY(180deg) rotateZ(180deg);
+}
+
+.front,
+.back {
+  height: 100%;
+  width: 100%;
+  border-radius: 1rem;
+  position: absolute;
+  box-shadow: 0 0 10px 2px rgba(50, 50, 50, 0.5);
+  backface-visibility: hidden;
+  /* color: aliceblue; */
+  background-image: url("/assets/img/card-bg-img.jpg");
+  /* background: linear-gradient(-135deg, #f80a4a, #0aa4f8); */
+  height: 100%;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.front,
+.back {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.back {
+  transform: rotateY(180deg) rotateZ(180deg);
+}
+
+/* --------------------------Animation-------------------------------- */
+.card .front img,
+.card .back img {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 15px);
+  }
+  100% {
+    transform: translate(0, -0px);
+  }
+}
+
+/* ----------------------------------------- */
+.notFound {
+  display: none;
+}
