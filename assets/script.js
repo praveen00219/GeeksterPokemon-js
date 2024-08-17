@@ -60,15 +60,19 @@ function applyFilters() {
   let notFound = document.getElementById("notFound");
   let allCards = document.querySelectorAll(".card-container");
   let selectedType = type.value.toLowerCase();
+  let isAnyCardVisible = false;
+
   allCards.forEach((card) => {
     let cardType = card.querySelector(".types").textContent.toLowerCase();
     if (selectedType === "" || cardType === selectedType) {
       card.style.display = "block";
+      isAnyCardVisible = true;
     } else {
       card.style.display = "none";
-      notFound.style.display = "flex";
     }
   });
+
+  notFound.style.display = isAnyCardVisible ? "none" : "flex";
 }
 
 // Handle search functionality
@@ -76,15 +80,19 @@ function handleSearch() {
   let notFound = document.getElementById("notFound");
   let searchValue = searchInput.value.toUpperCase();
   let allCards = document.querySelectorAll(".card-container");
+  let isAnyCardVisible = false;
+
   allCards.forEach(function (card) {
     let cardName = card.querySelector(".name").textContent.toUpperCase();
     if (cardName.includes(searchValue)) {
       card.style.display = "block";
+      isAnyCardVisible = true;
     } else {
       card.style.display = "none";
-      notFound.style.display = "flex";
     }
   });
+
+  notFound.style.display = isAnyCardVisible ? "none" : "flex";
 }
 
 // Event listeners
@@ -107,5 +115,3 @@ async function initialize() {
 }
 
 initialize();
-
-// --------------------------------------------------------
