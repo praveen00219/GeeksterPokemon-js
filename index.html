@@ -43,8 +43,13 @@
             <!-- Pokémon cards will be dynamically inserted here -->
         </div>
         <!--when we are Searching and filtering if the searched pokemon not available then this img show -->
-        <div class="notFound flex items-center justify-center">
-            <img src="/assets/img/pikachu-pokemon-say-NO.gif" class="" alt="">
+        <div id="notFound" class="notFound mt-5 flex relative items-center justify-center">
+            <img src="/assets/img/pikachu-pokemon-say-NO.gif" class="h-[40vh]" alt="">
+            <div class="absolute top-[70%] left[50%] text-3xl text-center font-bold text-gray-700">
+                <h1>Not Found !</h1>
+                <br><br>
+                <p>Please Re-Try With Correct Pokemon !!</p>
+            </div>
         </div>
     </div>
 

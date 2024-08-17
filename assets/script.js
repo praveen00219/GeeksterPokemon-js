@@ -57,6 +57,7 @@ async function populateTypeDropdown() {
 
 // Apply filters
 function applyFilters() {
+  let notFound = document.getElementById("notFound");
   let allCards = document.querySelectorAll(".card-container");
   let selectedType = type.value.toLowerCase();
   allCards.forEach((card) => {
@@ -65,12 +66,14 @@ function applyFilters() {
       card.style.display = "block";
     } else {
       card.style.display = "none";
+      notFound.style.display = "flex";
     }
   });
 }
 
 // Handle search functionality
 function handleSearch() {
+  let notFound = document.getElementById("notFound");
   let searchValue = searchInput.value.toUpperCase();
   let allCards = document.querySelectorAll(".card-container");
   allCards.forEach(function (card) {
@@ -79,6 +82,7 @@ function handleSearch() {
       card.style.display = "block";
     } else {
       card.style.display = "none";
+      notFound.style.display = "flex";
     }
   });
 }
